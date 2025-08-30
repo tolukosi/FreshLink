@@ -1,0 +1,480 @@
+AppName: FreshLink
+Product Requirements Document (PRD)
+Version: 1.0
+Date: August 29, 2025
+Document Owner: Product Manager
+
+Executive Summary
+Vision
+To create the world's leading location-aware marketplace that connects local food producers directly with consumers and businesses, starting in Melfort, Saskatchewan, and scaling globally while maintaining community-focused local food systems.
+Mission
+Empower rural communities by providing farmers, artisans, and local food producers with a digital platform to reach customers efficiently, while giving consumers easy access to fresh, local, sustainably-produced food.
+Success Metrics
+
+Year 1: 100+ active producers, 1,000+ registered consumers, $500K GMV
+Year 2: 500+ producers across Saskatchewan, 10,000+ users, $2M GMV
+Year 3: Multi-province expansion, 50,000+ users, $10M GMV
+
+
+Problem Statement
+Current Pain Points
+For Producers:
+
+Limited distribution channels and marketing reach
+High costs of traditional retail partnerships
+Difficulty managing direct-to-consumer sales
+Seasonal cash flow challenges
+Limited customer data and analytics
+
+For Consumers:
+
+Limited access to fresh, local produce in rural areas
+Inconvenient farmers market hours and locations
+Lack of transparency about food sources and farming practices
+Difficulty finding specialty local products
+No reliable delivery options for local food
+
+For Restaurants:
+
+Inconsistent local supplier relationships
+Difficulty sourcing specialty ingredients locally
+Complex logistics for multiple small suppliers
+Limited visibility into seasonal availability
+
+Market Opportunity
+
+Canadian local food market: $2.3B annually (growing 8% YoY)
+Saskatchewan agricultural output: $11.4B annually
+Rural e-commerce adoption: 67% and growing
+Farm-to-table trend: 73% of consumers willing to pay premium for local food
+
+
+Target Users
+Primary Users
+1. Local Food Producers (Supply Side)
+
+Small to medium farms (1-500 acres)
+Specialty crop producers
+Livestock ranchers
+Artisanal food makers
+Local bakers and processors
+
+2. Individual Consumers (Demand Side)
+
+Health-conscious families
+Rural residents with limited grocery access
+Urban consumers seeking local food
+Sustainability-focused buyers
+Ages 25-65, household income $40K+
+
+3. Business Customers
+
+Local restaurants and cafes
+Institutional buyers (schools, hospitals)
+Catering companies
+Food service providers
+
+Secondary Users
+
+Delivery drivers
+Platform administrators
+Regional coordinators
+
+
+Product Overview
+Platform Type
+Mobile-First Application: Native iOS and Android app built with React Native and Expo for streamlined development and deployment. Web access through responsive mobile interface.
+Core Value Propositions
+For Producers:
+
+Direct access to customers without intermediaries
+Simplified order management and inventory tracking
+Marketing tools and customer insights
+Flexible pricing and product presentation
+Automated payment processing
+
+For Consumers:
+
+Convenient access to fresh, local food
+Transparent sourcing and producer stories
+Flexible delivery and pickup options
+Seasonal product discovery
+Community connection with local farmers
+
+For Businesses:
+
+Streamlined local procurement
+Bulk ordering capabilities
+Inventory management integration
+Reliable delivery scheduling
+Cost-effective local sourcing
+
+Key Differentiators
+
+Location-aware global platform with local focus
+Integrated delivery and logistics management
+Community-driven features and producer storytelling
+Seasonal availability and subscription models
+Multi-currency and multi-language support
+
+
+Functional Requirements
+User Management & Authentication
+
+REQ-001: Multi-role user registration (Producer, Consumer, Business, Driver) with easy role switching
+REQ-002: Supabase Auth integration with email verification
+REQ-003: Social media login integration (Google, Facebook, Apple) via Supabase
+REQ-004: Password reset and account recovery through Supabase Auth
+REQ-005: Role-based dashboard access with seamless profile switching
+REQ-006: Secure logout functionality accessible from all screens
+REQ-007: Cross-role profile creation (Producer can create Buyer profile and vice versa)
+REQ-008: Progressive profile completion with 100% completion tracking
+REQ-009: Profile completion progress indicator throughout onboarding
+REQ-010: Mandatory field completion before profile activation
+
+Profile Management Features
+
+REQ-011: Comprehensive producer profile creation with farm story and media uploads
+REQ-012: Detailed buyer profile with preferences, dietary restrictions, and delivery preferences
+REQ-013: Business profile setup with ordering preferences and payment terms
+REQ-014: Profile completion wizard with mandatory field validation
+REQ-015: Real-time profile completion percentage display
+REQ-016: Profile completion incentives and rewards system
+REQ-017: Easy profile switching between Producer/Buyer roles without re-authentication
+REQ-018: Profile verification system with document upload capability
+REQ-019: Privacy controls for profile information visibility
+REQ-020: Profile completion requirements before platform access
+
+Producer Features
+
+REQ-021: Product catalog management with photos and descriptions via Supabase Storage
+REQ-022: Inventory tracking with real-time stock updates using Supabase Realtime
+REQ-023: Order management with status tracking and notifications
+REQ-024: Analytics dashboard with sales and customer insights
+REQ-025: Seasonal availability calendar with automatic updates
+REQ-026: Bulk pricing for business customers with tiered pricing
+REQ-027: Commission and payment tracking through Stripe integration
+REQ-028: Easy buyer profile creation from producer dashboard
+REQ-029: Logout functionality accessible from all producer screens
+
+Consumer Features
+
+REQ-030: Location-based product discovery using PostGIS geospatial queries
+REQ-031: Advanced filtering by category, price, distance, certifications
+REQ-032: Multi-vendor shopping cart functionality with Supabase real-time updates
+REQ-033: Secure checkout with Stripe payment integration
+REQ-034: Order tracking with real-time delivery updates via Supabase Realtime
+REQ-035: Product reviews and ratings system stored in Supabase
+REQ-036: Wishlist and favorites management with cloud sync
+REQ-037: Reorder functionality for regular purchases
+REQ-038: Seasonal product alerts and push notifications via Expo
+REQ-039: Easy producer profile creation from consumer dashboard
+REQ-040: Logout functionality accessible from all consumer screens
+REQ-041: 100% profile completion wizard with progress tracking
+
+Business Customer Features
+
+REQ-042: Bulk ordering interface with wholesale pricing
+REQ-043: Invoice management and payment terms through Supabase
+REQ-044: Scheduled recurring orders with automated processing
+REQ-045: Multi-location delivery management
+REQ-046: Business profile completion wizard with 100% progress tracking
+REQ-047: Logout functionality from all business screens
+
+Delivery & Logistics
+
+REQ-048: Multiple fulfillment options (delivery, pickup, farmers market)
+REQ-049: Route optimization using Google Maps API
+REQ-050: Real-time delivery tracking with GPS via Expo Location
+REQ-051: Delivery time window selection with calendar integration
+REQ-052: Driver mobile interface built with React Native
+REQ-053: Delivery confirmation with photo upload to Supabase Storage
+REQ-054: Logout functionality for driver interface
+
+Payment & Financial
+
+REQ-055: Stripe payment integration via Supabase Edge Functions
+REQ-056: Multi-currency support for global expansion
+REQ-057: Automated commission calculation stored in Supabase
+REQ-058: Producer payout management through Stripe Connect
+REQ-059: Tax calculation and reporting via Edge Functions
+REQ-060: Subscription billing for CSA programs using Stripe Subscriptions
+
+Location & Scaling
+
+REQ-061: Global user registration with location verification via PostGIS
+REQ-062: Geospatial database queries for distance-based sorting
+REQ-063: Multi-language support through Expo Localization
+REQ-064: Regional administrator management in Supabase
+REQ-065: Market expansion analytics via Supabase dashboard
+REQ-066: Cloudflare CDN integration for global performance
+
+
+Non-Functional Requirements
+Performance
+
+NFR-001: Page load times under 3 seconds on 3G connections
+NFR-002: Support for 10,000+ concurrent users
+NFR-003: 99.9% uptime availability
+NFR-004: Database response times under 200ms
+NFR-005: Image loading optimization with lazy loading
+
+Security
+
+NFR-006: HTTPS encryption for all data transmission
+NFR-007: PCI DSS compliance for payment processing
+NFR-008: GDPR compliance for user data protection
+NFR-009: Regular security audits and penetration testing
+NFR-010: Secure API authentication with rate limiting
+
+Usability
+
+NFR-011: WCAG 2.1 AA accessibility compliance
+NFR-012: Mobile-responsive design for all screen sizes
+NFR-013: Intuitive navigation with maximum 3-click access
+NFR-014: Offline functionality for core features
+NFR-015: Multi-language support starting with English and French
+
+Scalability
+
+NFR-016: Horizontal scaling capability for database and servers
+NFR-017: CDN integration for global content delivery
+NFR-018: Microservices architecture for independent scaling
+NFR-019: Auto-scaling based on traffic demands
+NFR-020: Load balancing across multiple servers
+
+
+Technical Architecture
+Technology Stack (Novice-Friendly Implementation)
+
+Mobile App: React Native with Expo (cross-platform iOS/Android)
+Backend: Supabase (Backend-as-a-Service) for simplified development
+Database: Supabase PostgreSQL with PostGIS for geospatial features
+Authentication: Supabase Auth with social login integration
+Storage: Supabase Storage for images and files
+Real-time: Supabase Realtime for live updates
+Hosting: Google Cloud Platform with Cloudflare CDN
+Payments: Stripe integration via Supabase Edge Functions
+Maps: Google Maps API with geocoding
+Push Notifications: Expo Push Notifications
+
+System Architecture (Simplified for Novice Management)
+
+Mobile-First Architecture: React Native with Expo for easy deployment
+Backend-as-a-Service: Supabase eliminates complex server management
+Edge Functions: Serverless functions for payment processing and complex logic
+CDN Integration: Cloudflare for global content delivery and security
+Real-time Subscriptions: Built-in Supabase real-time for live features
+Automatic Scaling: Supabase and Google Cloud handle scaling automatically
+
+Data Architecture (Supabase-Based)
+
+User Profiles: Comprehensive user table with role-based permissions via Supabase RLS
+Geospatial Data: PostGIS extension for location-based product and producer indexing
+Order Management: Real-time order tracking with Supabase Realtime subscriptions
+Analytics: Built-in Supabase analytics with custom dashboard views
+File Storage: Supabase Storage with CDN integration for images and documents
+Audit Trails: Automatic audit logging for financial transactions and user actions
+
+
+User Experience Design
+Design Principles
+
+Simplicity: Clean, intuitive interfaces that reduce cognitive load
+Trust: Transparent information and secure transaction processes
+Community: Foster connections between producers and consumers
+Accessibility: Inclusive design for all users and abilities
+Performance: Fast, responsive experiences across all devices
+
+Key User Journeys
+Consumer Journey:
+
+Discovery → Search/Browse products by location
+Selection → View product details and producer story
+Purchase → Add to cart and secure checkout
+Fulfillment → Track order and arrange delivery/pickup
+Feedback → Rate products and share experiences
+
+Producer Journey:
+
+Onboarding → Create profile and add products
+Management → Update inventory and pricing
+Orders → Receive and fulfill customer orders
+Analytics → Track sales and customer insights
+Growth → Expand product offerings and customer base
+
+Mobile-First Approach
+
+Progressive Web App (PWA) capabilities
+Touch-optimized interactions
+Offline functionality for core features
+Push notifications for order updates
+Camera integration for product photos
+
+
+Business Model
+Revenue Streams
+
+Transaction Commission: 8-12% fee on completed sales
+Producer Subscriptions: $29-99/month for premium features
+Delivery Fees: $3-8 per delivery based on distance
+Featured Listings: $50-200/month for promotional placement
+Business Accounts: $199-499/month for restaurant features
+
+Cost Structure
+
+Technology development and maintenance (40%)
+Marketing and customer acquisition (25%)
+Operations and logistics (20%)
+Personnel and administration (15%)
+
+Financial Projections
+Year 1: $50K revenue, -$300K net (investment phase)
+Year 2: $400K revenue, -$100K net (growth phase)
+Year 3: $1.2M revenue, $200K net (profitability)
+
+Go-to-Market Strategy
+Phase 1: Melfort Market Launch (Months 1-6)
+
+Partner with 20+ local producers
+Target 500+ consumer registrations
+Focus on farmers market integration
+Local media and community outreach
+
+Phase 2: Regional Expansion (Months 7-18)
+
+Expand to Nipawin, Tisdale, and surrounding areas
+Add restaurant and business features
+Scale to 100+ producers and 2,500+ consumers
+Implement delivery network
+
+Phase 3: Provincial Scaling (Months 19-36)
+
+Launch in Saskatoon and Regina markets
+Add CSA subscription features
+Reach 500+ producers and 15,000+ users
+Explore partnerships with food hubs
+
+Marketing Strategy
+
+Digital marketing (social media, Google Ads, content marketing)
+Community partnerships (farmers markets, local events)
+Producer referral programs
+Influencer partnerships with local food advocates
+Public relations and media coverage
+
+
+Success Metrics & KPIs
+User Acquisition
+
+Monthly Active Users (MAU) growth rate
+Customer Acquisition Cost (CAC)
+Producer onboarding rate
+Conversion rate from visitor to registered user
+
+Engagement
+
+Average session duration
+Pages/screens per session
+Feature adoption rates
+User retention (Day 1, 7, 30, 90)
+
+Financial
+
+Gross Merchandise Value (GMV)
+Average Order Value (AOV)
+Revenue per user
+Customer Lifetime Value (CLV)
+Producer revenue growth
+
+Operational
+
+Order fulfillment success rate
+Delivery performance metrics
+Customer satisfaction scores
+Producer satisfaction scores
+Platform reliability and uptime
+
+
+Risk Assessment
+Technical Risks
+
+High: Complex multi-sided marketplace integration
+Medium: Geospatial search performance at scale
+Low: Third-party API dependencies
+
+Business Risks
+
+High: Producer adoption in conservative farming communities
+Medium: Competition from established players
+Low: Regulatory changes affecting food commerce
+
+Market Risks
+
+High: Seasonal demand fluctuations
+Medium: Economic downturn affecting premium food spending
+Low: Changes in consumer local food preferences
+
+Mitigation Strategies
+
+Iterative development with early user feedback
+Strong community relationships and local partnerships
+Diversified revenue streams and flexible pricing
+Comprehensive insurance and legal compliance
+Conservative financial planning with contingency funds
+
+
+Development Timeline (Simplified with Supabase)
+Phase 1: MVP Development (Months 1-3)
+
+Month 1: Supabase setup, basic authentication, and user profiles with progress tracking
+Month 2: Core marketplace features and product management
+Month 3: Order management, Stripe integration, and logout functionality
+
+Phase 2: Enhanced Features (Months 4-6)
+
+Month 4: Advanced search with PostGIS, rating system
+Month 5: React Native mobile app deployment via Expo
+Month 6: Real-time features with Supabase Realtime, push notifications
+
+Phase 3: Business Features (Months 7-9)
+
+Month 7: Business customer features and bulk ordering
+Month 8: Analytics dashboard using Supabase built-in analytics
+Month 9: CSA subscription system with Stripe Subscriptions
+
+Phase 4: Scale and Optimize (Months 10-12)
+
+Month 10: Cloudflare CDN integration for global performance
+Month 11: Advanced logistics and delivery optimization
+Month 12: Multi-language support and international expansion preparation
+
+Key Technical Advantages for Novice Management
+Simplified Development Stack
+
+No Server Management: Supabase handles all backend infrastructure
+Built-in Authentication: Pre-configured auth system with social logins
+Real-time Out-of-the-Box: No complex WebSocket setup required
+Automatic Scaling: Supabase and Google Cloud handle traffic spikes
+Visual Database Management: Supabase dashboard for easy data management
+Expo Development: Simplified mobile app deployment and updates
+
+Hosting and Infrastructure Benefits
+
+Google Cloud Platform: Enterprise-grade reliability and global reach
+Cloudflare CDN: Automatic performance optimization and security
+Supabase Edge Functions: Serverless computing without server management
+Automated Backups: Built-in database backup and recovery
+SSL/TLS Certificates: Automatic HTTPS configuration
+Global Edge Locations: Reduced latency worldwide
+
+Development Team Requirements
+
+Single Technology Stack: React Native/JavaScript throughout
+Minimal DevOps: Supabase handles infrastructure management
+Visual Tooling: Database and API management through web interfaces
+Built-in Monitoring: Performance and error tracking included
+Simple Deployment: One-command deployment via Expo and Supabase CLI
+
+This PRD outlines a comprehensive approach to building a successful farm-to-table aggregator platform that serves the unique needs of rural food systems while maintaining the flexibility to scale globally. The focus on community connection, producer empowerment, and consumer convenience positions the platform for sustainable growth and positive impact on local food economies.
+The success of this platform depends on strong execution of the technical architecture, thoughtful user experience design, and careful community engagement to build trust and adoption among both producers and consumers in the local food ecosystem.
